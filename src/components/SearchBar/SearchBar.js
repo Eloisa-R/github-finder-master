@@ -13,7 +13,7 @@ const searchBar = (props) => (
         <Row className="show-grid flex-center">
             <Col  xs={12} md={8} lg={8}>
                 <form className="search-form-wrapper flex-row">
-                    <FormGroup controlId="repoSearchField" className="search-input-wrapper">
+                    <FormGroup controlId="repoSearchField" className="search-input-wrapper flex-grow">
                         <ControlLabel>Search for a Repository</ControlLabel>
                         <FormControl type="search" placeholder="Type your search here" value={props.searchQuery} onChange={props.changed}/>
                     </FormGroup>

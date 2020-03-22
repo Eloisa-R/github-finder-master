@@ -5,13 +5,13 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 import {IntrospectionFragmentMatcher} from 'apollo-cache-inmemory';
 import introspectionQueryResultData from './fragmentTypes.json';
-import Search from './containers/Search/Search';
+import SearchRepositories from './containers/Search/SearchRepositories';
 
 import logo from './logo.svg';
 import './App.css';
 
 // Yes, this is an unsafe way ;)
-const TOKEN = 'cdfd11da3a5b339232211ced49f860aa1d3cd96d'; // <-- TODO: place your token here
+const TOKEN = 'ec58613203268fb3173afda75d58f38954f6ed7a'; // <-- TODO: place your token here
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData
 });
@@ -35,7 +35,7 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to github repository finder</h1>
           </header>
-          <Search/>
+          <SearchRepositories/>
         </div>
       </ApolloProvider>
     );

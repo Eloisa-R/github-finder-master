@@ -39,7 +39,7 @@ query Repository($query: String!) {
     }
     }
 `;
-class Search extends Component {
+class SearchRepositories extends Component {
 
     state = {
         searchQuery: '',
@@ -103,4 +103,4 @@ class Search extends Component {
     }
 }
 
-export default Search
+export default SearchRepositories
