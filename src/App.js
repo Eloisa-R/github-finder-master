@@ -5,7 +5,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 import {IntrospectionFragmentMatcher} from 'apollo-cache-inmemory';
 import introspectionQueryResultData from './fragmentTypes.json';
-import SearchRepositories from './containers/Search/SearchRepositories';
+import SearchRepositories from './containers/SearchRepositories/SearchRepositories';
 
 import logo from './logo.svg';
 import './App.css';
