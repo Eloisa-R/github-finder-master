@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 
-const TOKEN = '95b921d34cbe281ceadc3158f60ec8cb308ec1ef';
+const TOKEN = 'cdfd11da3a5b339232211ced49f860aa1d3cd96d';
 
 fetch('https://api.github.com/graphql', {
     method: 'POST',

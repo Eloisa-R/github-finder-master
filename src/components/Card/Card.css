@@ -1,0 +1,13 @@
+.card-profile-picture{
+    width: 25%;
+    height: 25%;
+}
+
+.card-text-container{
+    text-align: start;
+}
+
+.card-remove-button{
+    height: fit-content;
+    align-self: center;
+}

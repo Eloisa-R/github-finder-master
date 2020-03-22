@@ -1,6 +1,4 @@
 .search-form-wrapper {
-    display: flex;
-    flex-direction: row;
     padding: 40px;
 }
 
@@ -13,7 +11,3 @@
     align-self: flex-end;
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-}

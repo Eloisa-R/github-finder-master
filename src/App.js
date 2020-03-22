@@ -11,7 +11,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // Yes, this is an unsafe way ;)
-const TOKEN = '95b921d34cbe281ceadc3158f60ec8cb308ec1ef'; // <-- TODO: place your token here
+const TOKEN = 'cdfd11da3a5b339232211ced49f860aa1d3cd96d'; // <-- TODO: place your token here
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData
 });
