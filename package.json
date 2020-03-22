@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "npm run build-fragment && react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build-fragment && react-scripts build",
     "build-fragment": "node src/fragmentTypes.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

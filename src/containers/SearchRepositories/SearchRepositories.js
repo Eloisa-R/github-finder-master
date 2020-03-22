@@ -50,6 +50,18 @@ class SearchRepositories extends Component {
 
    setLoading = loading => this.setState({isLoading: loading})
 
+    fetchData = async(client) => {
+        this.setLoading(true)
+        const { data } = await client.query({
+            query: GET_REPOSITORIES,
+            variables: { query: this.state.searchQuery }
+        });
+        this.onDataFetched(data)
+        this.setLoading(false)
+    }
+
+    preventDefault = event => event.preventDefault()
+
     inputChangeHandler = (event) => {
         this.setState({searchQuery: event.target.value})
     }
@@ -73,15 +85,13 @@ class SearchRepositories extends Component {
                         <SearchBar
                             searchQuery={this.state.searchQuery}
                             changed={this.inputChangeHandler}
-                            clicked={async() => {
-                                this.setLoading(true)
-                                const { data } = await client.query({
-                                    query: GET_REPOSITORIES,
-                                    variables: { query: this.state.searchQuery }
-                                });
-                                this.onDataFetched(data)
-                                this.setLoading(false)
-                            }}/>
+                            onFormSubmit={this.preventDefault}
+                            keyPressed={(event) => {
+                                if (event.key === "Enter") {
+                                this.fetchData(client)
+                            }}}
+                            clicked={() => this.fetchData(client)
+                            }/>
                     )}
                 </ApolloConsumer>
                 <Grid className="">
