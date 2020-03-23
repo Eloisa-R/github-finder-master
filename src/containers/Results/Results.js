@@ -14,7 +14,7 @@ const results =(props) => {
     return (
             <div>
                     <h4>Search Results</h4>
-            {props.loading? 'Fetching repositories...': results}
+            {props.loading? 'Fetching repositories...': props.error? 'Failed to fetch repositories, try again later': results}
             </div>
                 )
 }

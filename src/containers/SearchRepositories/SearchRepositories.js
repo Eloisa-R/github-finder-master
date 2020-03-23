@@ -45,19 +45,28 @@ class SearchRepositories extends Component {
         searchQuery: '',
         results: [],
         isLoading: false,
-        newCardToAdd: null
+        newCardToAdd: null,
+        error: null
     }
 
    setLoading = loading => this.setState({isLoading: loading})
 
+    setError = error => this.setState({error})
+
     fetchData = async(client) => {
         this.setLoading(true)
-        const { data } = await client.query({
-            query: GET_REPOSITORIES,
-            variables: { query: this.state.searchQuery }
-        });
-        this.onDataFetched(data)
-        this.setLoading(false)
+        try {
+            const { data } = await client.query({
+                query: GET_REPOSITORIES,
+                variables: { query: this.state.searchQuery }
+            });
+            this.onDataFetched(data)
+        } catch (e) {
+           this.setError(e)
+        } finally {
+            this.setLoading(false)
+        }
+
     }
 
     preventDefault = event => event.preventDefault()
@@ -103,6 +112,7 @@ class SearchRepositories extends Component {
                             <Results
                                 loading={this.state.isLoading}
                                 results={this.state.results}
+                                error={this.state.error}
                                 handleResultClick={this.handleResultClick}/>
                         </Col>
                     </Row>
